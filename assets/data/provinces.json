@@ -1,0 +1,335 @@
+{ 
+    "provinces":[
+        {
+            "id": 1, 
+            "name": "Azua",
+            "code": "Azua",
+            "exports": "8.6",
+            "products":[
+                "banana",
+                "tomato"
+            ]    
+        },
+        {
+            "id": 2, 
+            "name": "Baoruco",
+            "code": "Bahoruco",
+            "exports": "0.0",
+            "products":[
+                "coffee"
+            ]    
+        },
+        {
+            "id": 3, 
+            "name": "Barahona",
+            "code": "Barahona",
+            "exports": "0.0",
+            "products":[
+                "cotton fabrics"
+            ]    
+        },
+        {
+            "id": 4, 
+            "name": "Dajabón",
+            "code": "Dajabón",
+            "exports": "0.6",
+            "products":[
+                "plastic bags",
+                "concrete"
+            ]    
+        },
+        {
+            "id": 5, 
+            "name": "Distrito Nacional",
+            "code": "D.N.",
+            "exports": "887.3",
+            "products":[
+                "rum & spirits",
+                "soy oil"
+            ]    
+        },
+        {
+            "id": 6, 
+            "name": "Duarte",
+            "code": "Duarte",
+            "exports": "58.5",
+            "products":[
+                "cocoa beans"
+            ]    
+        },
+        {
+            "id": 7, 
+            "name": "Elías Piña",
+            "code": "Elías \nPiña",
+            "exports": "0.2",
+            "products":[
+                "underwear"
+            ]    
+        },
+        {
+            "id": 8, 
+            "name": "El Seibo",
+            "code": "El Seibo",
+            "exports": "0.2",
+            "products":[
+                "underwear"
+            ]    
+        },
+        {
+            "id": 9, 
+            "name": "Espaillat",
+            "code": "Espaillat",
+            "exports": "69.9",
+            "products":[
+                "swimwear",
+                "mango",
+                "concrete"
+            ]    
+        },
+        {
+            "id": 10, 
+            "name": "Hato Mayor",
+            "code": "Hato \nMayor",
+            "exports": "0.3",
+            "products":[
+                "oranges",
+                "limes",
+                "shirts"
+            ]    
+        },
+        {
+            "id": 11, 
+            "name": "Hermanas Mirabal",
+            "code": "Hermanas \nMirabal",
+            "exports": "11.0",
+            "products":[
+                "cacao beans"
+            ]    
+        },
+        {
+            "id": 12, 
+            "name": "Independencia",
+            "code": "Independencia",
+            "exports": "0.1",
+            "products":[
+                "natural plaster",
+                "oat grains"
+            ]    
+        },
+        {
+            "id": 13, 
+            "name": "La Altagracia",
+            "code": "La Altagracia",
+            "exports": "8.4",
+            "products":[
+                "avocado",
+                "mango",
+                "beauty products"
+            ]    
+        },
+        {
+            "id": 14, 
+            "name": "La Romana",
+            "code": "La Romana",
+            "exports": "766.5",
+            "products":[
+                "cigars",
+                "jewelry items",
+                "medical instruments"
+            ]    
+        },
+        {
+            "id": 15, 
+            "name": "La Vega",
+            "code": "La Vega",
+            "exports": "126.6",
+            "products":[
+                "sport shoes",
+                "peppers",
+                "swarters"
+            ]    
+        },
+        {
+            "id": 16, 
+            "name": "María Trinidad Sánchez",
+            "code": "María \nTrinidad \nSánchez",
+            "exports": "3.2",
+            "products":[
+                "fertilizer",
+                "doors",
+                "windows"
+            ]    
+        },
+        {
+            "id": 17, 
+            "name": "Monseñor Nouel",
+            "code": "Monseñor \nNouel",
+            "exports": "619.0",
+            "products":[
+                "ferronickel",
+                "cotton fabrics"
+            ]    
+        },
+        {
+            "id": 18, 
+            "name": "Monte Cristi",
+            "code": "Monte Cristi",
+            "exports": "87.7",
+            "products":[
+                "banana",
+                "fruits",
+                "vegetable juices"
+            ]    
+        },
+        {
+            "id": 19, 
+            "name": "Monte Plata",
+            "code": "Monte Plata",
+            "exports": "6.3",
+            "products":[
+                "pineapple",
+                "rum & other spirits"
+            ]    
+        },
+        {
+            "id": 20, 
+            "name": "Pedernales",
+            "code": "Pedernales",
+            "exports": "11.6",
+            "products":[
+                "rags",
+                "bakery items"
+            ]    
+        },
+        {
+            "id": 21, 
+            "name": "Peravia",
+            "code": "Peravia",
+            "exports": "25.4",
+            "products":[
+                "ketchup",
+                "mango"
+            ]    
+        },
+        {
+            "id": 22, 
+            "name": "Puerto Plata",
+            "code": "Puerto Plata",
+            "exports": "13.8",
+            "products":[
+                "luggage",
+                "wallets",
+                "wine"
+            ]    
+        },
+        {
+            "id": 23, 
+            "name": "Samaná",
+            "code": "Samaná",
+            "exports": "0.0",
+            "products":[
+                "candles",
+                "beauty products",
+                "coconut oil"
+            ]    
+        },
+        {
+            "id": 24, 
+            "name": "Sánchez Ramírez",
+            "code": "Sánchez \nRamírez",
+            "exports": "1,678.0",
+            "products":[
+                "gold",
+                "wheat flour",
+                "calcium carbonate"
+            ]    
+        },
+        {
+            "id": 25, 
+            "name": "San Cristóbal",
+            "code": "San Cristóbal",
+            "exports": "2.2",
+            "products":[
+                "circuit breakers",
+                "medical instruments and gadgets"
+            ]    
+        },
+        {
+            "id": 26, 
+            "name": "San José de Ocoa",
+            "code": "San José de Ocoa",
+            "exports": "2.4",
+            "products":[
+                "peppers",
+                "avocado"
+            ]    
+        },
+        {
+            "id": 27, 
+            "name": "San Juan",
+            "code": "San Juan",
+            "exports": "8.6",
+            "products":[
+                "tomato",
+                "avocado",
+                "flour preparations"
+            ]    
+        },
+        {
+            "id": 28, 
+            "name": "San Pedro de Macorís",
+            "code": "San Pedro \nde Macorís",
+            "exports": "648.2",
+            "products":[
+                "jewelry items",
+                "circuit breakers",
+                "waste",
+                "scrap gold"
+            ]    
+        },
+        {
+            "id": 29, 
+            "name": "Santiago",
+            "code": "Santiago",
+            "exports": "1,410.7",
+            "products":[
+                "cigars",
+                "tobacco",
+                "shoes"
+            ]    
+        },
+        {
+            "id": 30, 
+            "name": "Santiago Rodríguez",
+            "code": "Santiago \nRodríguez",
+            "exports": "5.6",
+            "products":[
+                "plates",
+                "sheets",
+                "ribbons",
+                "tapioca"
+            ]    
+        },
+        {
+            "id": 31, 
+            "name": "Santo Domingo",
+            "code": "Santo Domingo",
+            "exports": "2,496.8",
+            "products":[
+                "tshirts and cotton shirts",
+                "electrodiagnostic devices"
+            ]    
+        },
+        {
+            "id": 32, 
+            "name": "Valverde",
+            "code": "Valverde",
+            "exports": "189.9",
+            "products":[
+                "banana",
+                "shoes"
+            ]    
+        }
+    
+    ]
+}
