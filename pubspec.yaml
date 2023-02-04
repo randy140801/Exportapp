@@ -43,7 +43,7 @@ dependencies:
   flutter_svg: ^1.1.6
   flutter_staggered_animations: ^1.1.1
   peanut: ^4.3.0
-  photo_view: ^0.14.0
+  flutter_screenutil: ^5.6.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +73,8 @@ flutter:
     - assets/icons/
     - assets/icons/ranking/
     - assets/images/
+    - assets/images/screensaver/
+    - assets/images/exportsgoods/
     - assets/images/exporters directory/
     - assets/images/investment guide/
     - assets/images/home/

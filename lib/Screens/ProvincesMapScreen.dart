@@ -79,6 +79,8 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
   ];
   @override
   void initState() {
+    super.initState();
+    startTimer();
     _mapSource = MapShapeSource.asset(
       'assets/dominicanrepublic.json',
       shapeDataField: 'name',
@@ -86,8 +88,6 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
       primaryValueMapper: (int index) => data[index].name,
       dataLabelMapper: (int index) => data[index].code,
     );
-    super.initState();
-    startTimer();
   }
 
   void startTimer() {
@@ -96,29 +96,37 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
   }
 
   void stopTimer() {
-    setState(() => countdownTimer!.cancel());
+    Future.delayed(Duration.zero, () {
+      setState(() => countdownTimer!.cancel());
+    });
   }
 
   void stoprandom() {
-    setState(() => randomTimer != null ? randomTimer!.cancel() : null);
+    Future.delayed(Duration.zero, () {
+      setState(() => randomTimer != null ? randomTimer!.cancel() : null);
+    });
   }
 
   void resetTimer() {
     stopTimer();
     startTimer();
-    setState(() => myDuration = Duration(seconds: 20));
+    Future.delayed(Duration.zero, () {
+      setState(() => myDuration = Duration(seconds: 20));
+    });
   }
 
   void setCountDown() {
     final reduceSecondsBy = 1;
-    setState(() {
-      final seconds = myDuration.inSeconds - reduceSecondsBy;
-      if (seconds < 0) {
-        countdownTimer!.cancel();
-        generateRandom();
-      } else {
-        myDuration = Duration(seconds: seconds);
-      }
+    Future.delayed(Duration.zero, () {
+      setState(() {
+        final seconds = myDuration.inSeconds - reduceSecondsBy;
+        if (seconds < 0) {
+          countdownTimer!.cancel();
+          generateRandom();
+        } else {
+          myDuration = Duration(seconds: seconds);
+        }
+      });
     });
   }
 
@@ -126,8 +134,10 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
     randomTimer = Timer.periodic(Duration(seconds: 5), (timer) {
       Random random = Random();
       int randomNumber = random.nextInt(31);
-      setState(() {
-        selectedIndex = randomNumber;
+      Future.delayed(Duration.zero, () {
+        setState(() {
+          selectedIndex = randomNumber;
+        });
       });
     });
   }
@@ -206,13 +216,15 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
                             strokeWidth: 2,
                             selectedIndex: selectedIndex,
                             onSelectionChanged: (int index) {
-                              if (mounted) {
-                                setState(() {
-                                  selectedIndex = index;
-                                  stoprandom();
-                                  resetTimer();
-                                });
-                              }
+                              Future.delayed(Duration.zero, () {
+                                if (mounted) {
+                                  setState(() {
+                                    selectedIndex = index;
+                                    stoprandom();
+                                    resetTimer();
+                                  });
+                                }
+                              });
                             },
                             dataLabelSettings: MapDataLabelSettings(
                               // overflowMode: MapLabelOverflow.hide,
@@ -235,7 +247,7 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
                 color: Color(0xFF004C98),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   textBaseline: TextBaseline.ideographic,
                   children: [
                     Text(
