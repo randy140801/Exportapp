@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../models/RankingData.dart';
 import '../widgets/CalculateDimensions.dart';
@@ -35,7 +36,7 @@ class _ExportsGoodGlobalRankingScreenState
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF004C98),
-        toolbarHeight: getHeight(screenHeight, 160),
+        toolbarHeight: 110.h,
         elevation: 0,
         centerTitle: true,
         title: Column(
@@ -45,7 +46,7 @@ class _ExportsGoodGlobalRankingScreenState
               style: TextStyle(
                 fontFamily: 'BebasNeue',
                 fontWeight: FontWeight.w700,
-                fontSize: getTextSize(textScale, 50),
+                fontSize: 35.sp,
               ),
             ),
             Text(
@@ -53,7 +54,7 @@ class _ExportsGoodGlobalRankingScreenState
               style: TextStyle(
                 fontFamily: 'BebasNeue',
                 fontWeight: FontWeight.w700,
-                fontSize: getTextSize(textScale, 50),
+                fontSize: 35.sp,
               ),
             ),
           ],
@@ -62,11 +63,9 @@ class _ExportsGoodGlobalRankingScreenState
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(
-                top: getHeight(screenHeight, 9),
-                bottom: getHeight(screenHeight, 20)),
+            padding: EdgeInsets.only(top: 9.h, bottom: 10.h),
             child: SizedBox(
-              height: getHeight(screenHeight, 15),
+              height: 10.h,
               child: Container(color: Color(0XFF7EE1F8)),
             ),
           ),
@@ -75,7 +74,7 @@ class _ExportsGoodGlobalRankingScreenState
             style: TextStyle(
               fontFamily: 'BebasNeue',
               fontWeight: FontWeight.w700,
-              fontSize: getTextSize(textScale, 50),
+              fontSize: 30.sp,
               color: Color(0XFF03B2EF),
             ),
           ),
@@ -84,29 +83,28 @@ class _ExportsGoodGlobalRankingScreenState
             style: TextStyle(
               fontFamily: 'BebasNeue',
               fontWeight: FontWeight.w700,
-              fontSize: getTextSize(textScale, 50),
+              fontSize: 30.sp,
               color: Color(0XFF03B2EF),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(
-                top: getHeight(screenHeight, 10),
-                bottom: getHeight(screenHeight, 10),
-                left: getHeight(screenWidth, 130),
-                right: getHeight(screenWidth, 130)),
+              top: 5.h,
+              bottom: 5.h,
+              left: 50.w,
+              right: 50.w,
+            ),
             child: SizedBox(
-              height: getHeight(screenHeight, 3),
+              height: 2.h,
               child: Container(color: Color(0XFFE01737)),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
-                left: getHeight(screenWidth, 70),
-                right: getHeight(screenWidth, 70)),
+            padding: EdgeInsets.only(left: 25.w, right: 25.w),
             child: GridView.count(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
-              mainAxisSpacing: getHeight(screenHeight, 3),
+              mainAxisSpacing: 2.h,
               childAspectRatio: MediaQuery.of(context).size.aspectRatio * 1.9,
               crossAxisCount: 3,
               children: List.generate(9, (index) {
@@ -115,8 +113,8 @@ class _ExportsGoodGlobalRankingScreenState
                     children: [
                       Image.asset(
                         'assets/icons/ranking/${data[index].icon}.png',
-                        height: getHeight(screenHeight, 60),
-                        width: getHeight(screenWidth, 60),
+                        height: 40.h,
+                        width: 40.w,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -128,7 +126,7 @@ class _ExportsGoodGlobalRankingScreenState
                             style: TextStyle(
                               fontFamily: 'BebasNeue',
                               fontWeight: FontWeight.w400,
-                              fontSize: getTextSize(textScale, 30),
+                              fontSize: 20.sp,
                               color: Color(0xFF004C98),
                             ),
                           ),
@@ -137,7 +135,7 @@ class _ExportsGoodGlobalRankingScreenState
                             style: TextStyle(
                               fontFamily: 'BebasNeue',
                               fontWeight: FontWeight.w400,
-                              fontSize: getTextSize(textScale, 17),
+                              fontSize: 12.sp,
                               color: Color(0xFF004C98),
                             ),
                           ),
@@ -148,7 +146,7 @@ class _ExportsGoodGlobalRankingScreenState
                         style: TextStyle(
                           fontFamily: 'Avenir',
                           fontWeight: FontWeight.w900,
-                          fontSize: getTextSize(textScale, 13),
+                          fontSize: 8.sp,
                           color: Color(0xFF004C98),
                         ),
                       ),
@@ -169,11 +167,12 @@ class _ExportsGoodGlobalRankingScreenState
           ),
           Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
                   'assets/icons/ranking/${data[9].icon}.png',
-                  height: getHeight(screenHeight, 60),
-                  width: getHeight(screenWidth, 60),
+                  height: 40.h,
+                  width: 40.w,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:exportapp/models/Province.dart';
@@ -79,8 +80,6 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
   ];
   @override
   void initState() {
-    super.initState();
-    startTimer();
     _mapSource = MapShapeSource.asset(
       'assets/dominicanrepublic.json',
       shapeDataField: 'name',
@@ -88,6 +87,8 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
       primaryValueMapper: (int index) => data[index].name,
       dataLabelMapper: (int index) => data[index].code,
     );
+    startTimer();
+    super.initState();
   }
 
   void startTimer() {
@@ -151,11 +152,11 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF004C98),
-        toolbarHeight: getHeight(screenHeight, 160),
+        toolbarHeight: 110.h,
         elevation: 0,
         title: Padding(
           padding: EdgeInsets.only(
-            left: getHeight(screenWidth, 80),
+            left: 25.w,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,7 +166,7 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
                 style: TextStyle(
                   fontFamily: 'Avenir',
                   letterSpacing: 3,
-                  fontSize: getTextSize(textScale, 15),
+                  fontSize: 11.sp,
                 ),
               ),
               Text(
@@ -173,7 +174,7 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
                 style: TextStyle(
                   fontFamily: 'BebasNeue',
                   fontWeight: FontWeight.w400,
-                  fontSize: getTextSize(textScale, 45),
+                  fontSize: 35.sp,
                 ),
               ),
             ],
@@ -186,188 +187,189 @@ class _ProvincesMapScreenState extends State<ProvincesMapScreen> {
           stoprandom();
           resetTimer();
         },
-        child: SizedBox(
-          height: getHeight(screenHeight, 950),
-          child: Column(
-            children: [
-              Padding(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                top: 9.h,
+                bottom: 10.h,
+              ),
+              child: SizedBox(
+                height: 10.h,
+                child: Container(color: Color(0XFF7EE1F8)),
+              ),
+            ),
+            SizedBox(
+              height: 240.h,
+              child: Padding(
                 padding: EdgeInsets.only(
-                    top: getHeight(screenHeight, 9),
-                    bottom: getHeight(screenHeight, 10)),
-                child: SizedBox(
-                  height: getHeight(screenHeight, 15),
-                  child: Container(color: Color(0XFF7EE1F8)),
+                  top: 10.h,
+                  bottom: 10.h,
                 ),
-              ),
-              SizedBox(
-                height: getHeight(screenHeight, 360),
-                child: Padding(
-                    padding: EdgeInsets.only(
-                        top: getHeight(screenHeight, 10),
-                        bottom: getHeight(screenHeight, 10)),
-                    child: Center(
-                      child: SfMaps(
-                        layers: [
-                          MapShapeLayer(
-                            source: _mapSource,
-                            showDataLabels: true,
-                            color: Colors.white,
-                            strokeColor: Color(0XFF00B5EC),
-                            strokeWidth: 2,
-                            selectedIndex: selectedIndex,
-                            onSelectionChanged: (int index) {
-                              Future.delayed(Duration.zero, () {
-                                if (mounted) {
-                                  setState(() {
-                                    selectedIndex = index;
-                                    stoprandom();
-                                    resetTimer();
-                                  });
-                                }
-                              });
-                            },
-                            dataLabelSettings: MapDataLabelSettings(
-                              // overflowMode: MapLabelOverflow.hide,
-                              textStyle: TextStyle(
-                                  color: Color(0xFF004C98),
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: getTextSize(textScale, 8)),
-                            ),
-                            selectionSettings: const MapSelectionSettings(
-                              color: Color(0XFF00B5EC),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-              ),
-              Container(
-                width: getHeight(screenWidth, 800),
-                height: getHeight(screenHeight, 50),
-                color: Color(0xFF004C98),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  textBaseline: TextBaseline.ideographic,
-                  children: [
-                    Text(
-                      "EXPORTS 2021 ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'BebasNeue',
-                        fontWeight: FontWeight.w100,
-                        fontSize: getTextSize(textScale, 25),
-                      ),
-                    ),
-                    Text(
-                      'US\$ ${data[selectedIndex].exports} MM',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'BebasNeue',
-                        fontWeight: FontWeight.w700,
-                        fontSize: getTextSize(textScale, 25),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: getHeight(screenHeight, 55),
-                width: getHeight(screenWidth, 800),
-                decoration: BoxDecoration(
-                    border: Border(
-                  bottom: BorderSide(
-                      width: getHeight(screenHeight, 3),
-                      color: Color(0XFF0DB6F1)),
-                )),
                 child: Center(
-                  child: ListTile(
-                    title: Text(
-                      'MAIN PRODUCTS',
-                      style: TextStyle(
-                          color: Color(0xFF004C98),
-                          fontFamily: 'BebasNeue',
-                          fontWeight: FontWeight.w700,
-                          fontSize: getTextSize(textScale, 30)),
-                    ),
+                  child: SfMaps(
+                    layers: [
+                      MapShapeLayer(
+                        source: _mapSource,
+                        showDataLabels: true,
+                        color: Colors.white,
+                        strokeColor: Color(0XFF00B5EC),
+                        strokeWidth: 2,
+                        selectedIndex: selectedIndex,
+                        onSelectionChanged: (int index) {
+                          Future.delayed(Duration.zero, () {
+                            if (mounted) {
+                              setState(() {
+                                selectedIndex = index;
+                                stoprandom();
+                                resetTimer();
+                              });
+                            }
+                          });
+                        },
+                        dataLabelSettings: MapDataLabelSettings(
+                          // overflowMode: MapLabelOverflow.hide,
+                          textStyle: TextStyle(
+                              color: Color(0xFF004C98),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 6.sp),
+                        ),
+                        selectionSettings: const MapSelectionSettings(
+                          color: Color(0XFF00B5EC),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              SizedBox(
-                height: getHeight(screenHeight, 250),
-                child: AnimationLimiter(
-                  key: ValueKey("$selectedIndex"),
-                  child: ListView.builder(
-                    padding: EdgeInsets.only(
-                        left: getHeight(screenWidth, 100),
-                        right: getHeight(screenWidth, 100)),
-                    itemCount: data[selectedIndex].products.length,
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) {
-                      return AnimationConfiguration.staggeredList(
-                        position: index,
-                        duration: const Duration(milliseconds: 575),
-                        child: SlideAnimation(
-                          verticalOffset: 50.0,
-                          child: ScaleAnimation(
-                            child: Container(
-                              height: getHeight(screenHeight, 60),
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                bottom: BorderSide(
-                                    width: getHeight(screenHeight, 1.5),
-                                    color: Color(0XFF0DB6F1)),
-                              )),
-                              child: Center(
-                                child: ListTile(
-                                  title: Padding(
-                                    padding: EdgeInsets.only(
-                                        bottom: getHeight(screenHeight, 2)),
-                                    child: Row(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              right: getHeight(screenWidth, 7)),
-                                          child: SvgPicture.asset(
-                                            "assets/icons/${data[selectedIndex].products[index]}.svg",
-                                            height: getHeight(screenHeight, 40),
-                                            width: getHeight(screenWidth, 40),
-                                            color: Color(0XFF08B4E2),
-                                          ),
+            ),
+            Container(
+              width: 280.w,
+              height: 35.h,
+              color: Color(0xFF004C98),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                textBaseline: TextBaseline.ideographic,
+                children: [
+                  Text(
+                    "EXPORTS 2021 ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'BebasNeue',
+                      fontWeight: FontWeight.w100,
+                      fontSize: 20.sp,
+                    ),
+                  ),
+                  Text(
+                    'US\$ ${data[selectedIndex].exports} MM',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'BebasNeue',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.sp,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 38.h,
+              width: 280.w,
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom: BorderSide(
+                  width: 1.5.w,
+                  color: Color(0XFF0DB6F1),
+                ),
+              )),
+              child: Center(
+                child: ListTile(
+                  title: Text(
+                    'MAIN PRODUCTS',
+                    style: TextStyle(
+                        color: Color(0xFF004C98),
+                        fontFamily: 'BebasNeue',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20.sp),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 180.h,
+              child: AnimationLimiter(
+                key: ValueKey("$selectedIndex"),
+                child: ListView.builder(
+                  padding: EdgeInsets.only(
+                    left: 40.w,
+                    right: 40.w,
+                  ),
+                  itemCount: data[selectedIndex].products.length,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return AnimationConfiguration.staggeredList(
+                      position: index,
+                      duration: const Duration(milliseconds: 575),
+                      child: SlideAnimation(
+                        verticalOffset: 50.0,
+                        child: ScaleAnimation(
+                          child: Container(
+                            height: getHeight(screenHeight, 60),
+                            decoration: BoxDecoration(
+                                border: Border(
+                              bottom: BorderSide(
+                                  width: 0.5.w, color: Color(0XFF0DB6F1)),
+                            )),
+                            child: Center(
+                              child: ListTile(
+                                title: Padding(
+                                  padding: EdgeInsets.only(bottom: 3.h),
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(right: 7.w),
+                                        child: SvgPicture.asset(
+                                          "assets/icons/${data[selectedIndex].products[index]}.svg",
+                                          height: 30.h,
+                                          width: 30.w,
+                                          color: Color(0XFF08B4E2),
                                         ),
-                                        Text(
-                                          data[selectedIndex]
-                                              .products[index]
-                                              .toUpperCase(),
-                                          style: TextStyle(
-                                              color: Color(0xFF002456),
-                                              fontFamily: 'Avenir',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize:
-                                                  getTextSize(textScale, 14)),
+                                      ),
+                                      Text(
+                                        data[selectedIndex]
+                                            .products[index]
+                                            .toUpperCase(),
+                                        style: TextStyle(
+                                          color: Color(0xFF002456),
+                                          fontFamily: 'Avenir',
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 9.sp,
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         // ignore: sort_child_properties_last
         child: SizedBox(
-          height: getHeight(screenHeight, 30),
+          height: 20.h,
         ),
         color: Color(0xFFE01737),
       ),

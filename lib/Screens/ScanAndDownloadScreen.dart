@@ -1,5 +1,6 @@
 import 'package:exportapp/widgets/QrScannerOverlayShape.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/CalculateDimensions.dart';
 
@@ -19,7 +20,7 @@ class _ScanAndDownloadScreenState extends State<ScanAndDownloadScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0XFFE01737),
-        toolbarHeight: getHeight(screenHeight, 160),
+        toolbarHeight: 110.h,
         elevation: 0,
         centerTitle: true,
         title: Column(
@@ -29,7 +30,7 @@ class _ScanAndDownloadScreenState extends State<ScanAndDownloadScreen> {
               style: TextStyle(
                 fontFamily: 'BebasNeue',
                 fontWeight: FontWeight.w700,
-                fontSize: getTextSize(textScale, 50),
+                fontSize: 25.sp,
               ),
             ),
             Text(
@@ -37,56 +38,53 @@ class _ScanAndDownloadScreenState extends State<ScanAndDownloadScreen> {
               style: TextStyle(
                 fontFamily: 'BebasNeue',
                 fontWeight: FontWeight.w700,
-                fontSize: getTextSize(textScale, 50),
+                fontSize: 25.sp,
               ),
             ),
           ],
         ),
       ),
-      body: SizedBox(
-        height: getHeight(screenHeight, 1000),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  top: getHeight(screenHeight, 9),
-                  bottom: getHeight(screenHeight, 30)),
-              child: SizedBox(
-                height: getHeight(screenHeight, 15),
-                child: Container(color: Color(0XFF7EE1F8)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+                top: getHeight(screenHeight, 9),
+                bottom: getHeight(screenHeight, 30)),
+            child: SizedBox(
+              height: getHeight(screenHeight, 15),
+              child: Container(color: Color(0XFF7EE1F8)),
+            ),
+          ),
+          Container(
+            decoration: ShapeDecoration(
+              shape: QrScannerOverlayShape(
+                cutOutWidth: getHeight(screenWidth, 500),
+                cutOutHeight: getHeight(screenHeight, 250),
+                borderColor: Color(0XFF7EE1F8),
+                borderLength: 50,
               ),
             ),
-            Container(
-              decoration: ShapeDecoration(
-                shape: QrScannerOverlayShape(
-                  cutOutWidth: getHeight(screenWidth, 500),
-                  cutOutHeight: getHeight(screenHeight, 250),
-                  borderColor: Color(0XFF7EE1F8),
-                  borderLength: 50,
-                ),
+            child: Padding(
+              padding: EdgeInsets.all(
+                getHeight(screenHeight, 10),
               ),
-              child: Padding(
-                padding: EdgeInsets.all(
-                  getHeight(screenHeight, 10),
-                ),
-                child: Image.asset(
-                  "assets/images/${widget.name}/qr.png",
-                  width: getHeight(screenWidth, 350),
-                  height: getHeight(screenHeight, 200),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: getHeight(screenHeight, 100)),
               child: Image.asset(
-                "assets/images/${widget.name}/magazine.png",
-                width: getHeight(screenWidth, 500),
-                height: getHeight(screenHeight, 250),
+                "assets/images/${widget.name}/qr.png",
+                width: 250.w,
+                height: 130.h,
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: getHeight(screenHeight, 100)),
+            child: Image.asset(
+              "assets/images/${widget.name}/magazine.png",
+              width: 300.w,
+              height: 250.h,
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         // ignore: sort_child_properties_last

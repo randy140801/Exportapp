@@ -29,7 +29,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                     style: TextStyle(
                       fontFamily: 'BebasNeue',
                       fontWeight: FontWeight.w700,
-                      fontSize: 35.sp,
+                      fontSize: 33.sp,
                     ),
                   ),
                   Text(
@@ -37,7 +37,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                     style: TextStyle(
                       fontFamily: 'BebasNeue',
                       fontWeight: FontWeight.w700,
-                      fontSize: 35.sp,
+                      fontSize: 33.sp,
                     ),
                   ),
                 ],
@@ -56,8 +56,8 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    left: 50.w,
-                    right: 50.w,
+                    left: 45.w,
+                    right: 45.w,
                   ),
                   child: Column(
                     children: [
@@ -66,7 +66,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         style: TextStyle(
                           fontFamily: 'BebasNeue',
                           fontWeight: FontWeight.w700,
-                          fontSize: 40.sp,
+                          fontSize: 35.sp,
                           color: Color(0XFF00B5EC),
                         ),
                       ),
@@ -78,6 +78,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                       ),
                       Container(
                         height: 90.h,
+                        width: 350.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           color: Color(0xFF004C98),
@@ -125,14 +126,14 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 10.h,
+                        height: 15.h,
                       ),
                       Text(
                         "EXPORT DATA",
                         style: TextStyle(
                           fontFamily: 'BebasNeue',
                           fontWeight: FontWeight.w700,
-                          fontSize: 40.sp,
+                          fontSize: 35.sp,
                           color: Color(0xFF004C98),
                         ),
                       ),
@@ -143,7 +144,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 10.h,
                       ),
                     ],
                   ),
@@ -157,7 +158,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        height: 110.h,
+                        height: 100.h,
                         width: 80.w,
                         child: Image.asset(
                           "assets/images/exportsgoods/1.png",
@@ -165,7 +166,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         ),
                       ),
                       Container(
-                        height: 110.h,
+                        height: 100.h,
                         width: 80.w,
                         child: Image.asset(
                           "assets/images/exportsgoods/2.png",
@@ -173,7 +174,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         ),
                       ),
                       Container(
-                        height: 110.h,
+                        height: 100.h,
                         width: 80.w,
                         child: Image.asset(
                           "assets/images/exportsgoods/3.png",
@@ -181,7 +182,7 @@ class _ExportGoodsScreenState extends State<ExportGoodsScreen> {
                         ),
                       ),
                       Container(
-                        height: 110.h,
+                        height: 100.h,
                         width: 80.w,
                         child: Image.asset(
                           "assets/images/exportsgoods/4.png",

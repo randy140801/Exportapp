@@ -1,20 +1,13 @@
 import 'dart:async';
-import 'dart:math';
-
 import 'package:exportapp/Screens/AirportsAndSeaPortsScreen.dart';
 import 'package:exportapp/Screens/ExportGoodsScreen.dart';
 import 'package:exportapp/Screens/ExportsGoodGlobalRankingScreen.dart';
 import 'package:exportapp/Screens/ProvincesMapScreen.dart';
 import 'package:exportapp/Screens/ScanAndDownloadScreen.dart';
-import 'package:exportapp/Screens/StaticMapScreen.dart';
 import 'package:exportapp/Screens/TradeZoneScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../widgets/CalculateDimensions.dart';
 import 'ScreenSaver.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -100,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: EdgeInsets.only(top: 9.h),
                   child: SizedBox(
-                    height: 15.h,
+                    height: 10.h,
                     child: Container(color: Color(0XFF7EE1F8)),
                   ),
                 ),
@@ -155,119 +148,136 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ProvincesMapScreen(),
+                Container(
+                  child: Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProvincesMapScreen(),
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(
+                                  text:
+                                      "MAIN EXPORT PRODUCTS \n          PER PROVINCE"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const AirportsAndSeaportsScreen(),
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(
+                                  text:
+                                      "          AIRPORTS \nAND SEA PORTS MAP"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const TradeZoneScreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(text: "TRADE ZONE MAP"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ExportGoodsScreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(
+                                  text:
+                                      "DOMINICAN REPUBLIC\n    EXPORT OF GOODS"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ExportsGoodGlobalRankingScreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(text: "GLOBAL RANKINGS"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ScanAndDownloadScreen(
+                                    name: "exporters directory",
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(
+                                  text:
+                                      "EXPORTERS DIRECTORY \n              QR CODE"),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              resetTimer();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ScanAndDownloadScreen(
+                                    name: "investment guide",
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 8.h),
+                              child: ButtonDesign(
+                                  text: "INVESTMENT GUIDE \n          QR CODE"),
+                            ),
+                          ),
+                        ],
                       ),
-                    );
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(
-                        text: "MAIN EXPORT PRODUCTS \n          PER PROVINCE"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AirportsAndSeaportsScreen(),
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(
-                        text: "          AIRPORTS \nAND SEA PORTS MAP"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const TradeZoneScreen(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(text: "TRADE ZONE MAP"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ExportGoodsScreen(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(
-                        text: "DOMINICAN REPUBLIC\n    EXPORT OF GOODS"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            const ExportsGoodGlobalRankingScreen(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(text: "GLOBAL RANKINGS"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ScanAndDownloadScreen(
-                          name: "exporters directory",
-                        ),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(
-                        text: "EXPORTERS DIRECTORY \n              QR CODE"),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    resetTimer();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ScanAndDownloadScreen(
-                          name: "investment guide",
-                        ),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: ButtonDesign(
-                        text: "INVESTMENT GUIDE \n          QR CODE"),
+                    ),
                   ),
                 ),
               ],
